@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-primary-green: #062B22;
+  --color-primary-green-light: #0d4638;
+  --color-primary-green-dark: #031813;
+  --color-gold: #D4AF37;
+  --color-gold-light: #E5C158;
+  --color-gold-dark: #B38F24;
+  --color-linen: #F8F4ED;
+  --color-linen-dark: #EFEAE0;
+  
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+  
+  --radius-luxury: 24px;
+  --radius-luxury-sm: 12px;
+  --radius-luxury-md: 18px;
+  --radius-luxury-lg: 32px;
+}
+
+:root {
+  --background: #F8F4ED;
+  --foreground: #1A2421;
+  --primary-green: #062B22;
+  --gold: #D4AF37;
+}
+
+/* Luxury Dark Mode / Night Theme (Islamic emerald luxury) */
+.dark-theme {
+  --background: #031813;
+  --foreground: #F8F4ED;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* Elegant Luxury Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #062B22;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #D4AF37;
+}
+
+/* Cinematic light rays animation */
+@keyframes lightRay {
+  0% {
+    transform: rotate(0deg) scale(1);
+    opacity: 0.2;
+  }
+  50% {
+    transform: rotate(180deg) scale(1.2);
+    opacity: 0.45;
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+    opacity: 0.2;
+  }
+}
+
+.animate-light-rays {
+  animation: lightRay 20s infinite linear;
+}
+
+/* Floating dust particles keyframe */
+@keyframes floatParticle {
+  0% {
+    transform: translateY(0px) translateX(0px);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-80px) translateX(20px);
+    opacity: 0;
+  }
+}
+
+.floating-particle {
+  animation: floatParticle 8s infinite ease-in-out;
+}
+
+/* High-end glassmorphism styling */
+.luxury-glass {
+  background: rgba(248, 244, 237, 0.75);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(6, 43, 34, 0.08);
+}
+
+.dark-theme .luxury-glass {
+  background: rgba(3, 24, 19, 0.75);
+  border: 1px solid rgba(212, 175, 55, 0.15);
+}
+
+/* Luxury Soft Shadows */
+.luxury-shadow {
+  box-shadow: 0 8px 32px -4px rgba(6, 43, 34, 0.05);
+}
+
+.luxury-shadow-hover {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.luxury-shadow-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px -8px rgba(6, 43, 34, 0.1);
+}
+
+/* Heading font styling helper */
+.font-luxury-heading {
+  font-family: var(--font-serif);
+}
